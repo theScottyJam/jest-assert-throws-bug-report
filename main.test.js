@@ -1,15 +1,26 @@
-const assert = require('node:assert');
+const assert = require("node:assert");
 
-test('test1', () => {
-  assert.throws(
-    () => { throw new Error('message 1' ); },
-    { message: 'message 2' }
-  );
+test('throw error1', () => {
+  try {
+    assert.throws(
+      () => {
+        throw new Error('message 1');
+      },
+      { message: 'message 2' }
+    );
+  } catch (err) {
+    console.log('The actual error:', err);
+    throw err;
+  }
 });
 
-test('test2', () => {
-  assert.throws(
-    () => { throw new SyntaxError('message 1' ); },
-    TypeError
-  );
+test('throw error2', () => {
+  try {
+    assert.throws(() => {
+      throw new SyntaxError('message 1');
+    }, TypeError);
+  } catch (err) {
+    console.log('The actual error:', err);
+    throw err;
+  }
 });

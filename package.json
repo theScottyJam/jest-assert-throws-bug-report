@@ -2,9 +2,7 @@
   "name": "temp",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
   "scripts": {
-    "start": "node main.js",
     "test": "jest"
   },
   "author": "thescottyjam <theScottyJam@gmail.com>",
